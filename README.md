@@ -1,10 +1,14 @@
 # Genesis
 
-Welcome to EOS Force!
+EOS Force Genesis is comprised of these elements:
 
-EOS Force is an EOSIO software based blockchain focusing on the security and stablity.
+- [accounts_eosforce.csv](accounts_eosforce.csv)
+- [accounts_famous](accounts_famous.csv)
+- [accounts_snapshot](accounts_snapshot)
 
 [Learn more about EOS Force](https://github.com/eosforce/eosforce).
+
+This repo also maintains the document of running EOS Force node via docker.
 
 ## Run a node via Docker
 
