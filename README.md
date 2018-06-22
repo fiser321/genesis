@@ -2,9 +2,10 @@
 
 EOS Force Genesis is comprised of these elements:
 
-- [accounts_eosforce.csv](accounts_eosforce.csv)
-- [accounts_famous.csv](accounts_famous.csv)
-- [accounts_snapshot.csv](accounts_snapshot)
+- [accounts_eosforce.csv](csv/accounts_eosforce.csv)
+- [accounts_famous.csv](csv/accounts_famous.csv)
+- [accounts_snapshot.csv](csv/accounts_snapshot.csv)
+- [keys_biosbp.csv](csv/keys_biosbp.csv)
 
 [Learn more about EOS Force](https://github.com/eosforce/eosforce).
 
@@ -41,6 +42,17 @@ This repo also maintains the document of running EOS Force node via docker.
     ```
 
 - Docker status:
+
+    ```bash
+    # enter docker
+    $ docker exec -it eosforce bash
+
+    $ cleos wallet create
+
+    $ cleos import <your-private-key>
+
+    # refer to https://github.com/eosforce/contracts/tree/master/System#command-reference for more details about `transfer`, `vote` etc.
+    ```
 
     - `docker container ls`: check if the container is running.
     - `docker logs -f eosforce`: check the log of container `eosforce`.
