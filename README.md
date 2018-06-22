@@ -3,8 +3,8 @@
 EOS Force Genesis is comprised of these elements:
 
 - [accounts_eosforce.csv](accounts_eosforce.csv)
-- [accounts_famous](accounts_famous.csv)
-- [accounts_snapshot](accounts_snapshot)
+- [accounts_famous.csv](accounts_famous.csv)
+- [accounts_snapshot.csv](accounts_snapshot)
 
 [Learn more about EOS Force](https://github.com/eosforce/eosforce).
 
@@ -27,7 +27,7 @@ This repo also maintains the document of running EOS Force node via docker.
     $ cp config.ini /data/eosforce
     ```
 
-- Copy `genesis.json`, `System.abi` and `System.wasm` to `/data/eosforce`:
+- Copy `genesis.json`, `System.abi`, `System.wasm`, `eosio.token.abi` and `eosio.token.wasm` to `/data/eosforce`:
 
     ```bash
     $ cp genesis.json *.abi *.wasm /data/eosforce
