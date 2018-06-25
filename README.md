@@ -50,12 +50,12 @@ This repo also maintains the document of running EOS Force node via docker.
     $ cleos wallet create
 
     $ cleos import <your-private-key>
-
-    # refer to https://github.com/eosforce/contracts/tree/master/System#command-reference for more details about `transfer`, `vote` etc.
     ```
 
     - `docker container ls`: check if the container is running.
     - `docker logs -f eosforce`: check the log of container `eosforce`.
+
+    Refer to [eosforce/contracts/System](https://github.com/eosforce/contracts/tree/master/System#command-reference) for more details about `transfer`, `vote` etc.
 
 ## Register as a BP
 
@@ -65,7 +65,19 @@ This repo also maintains the document of running EOS Force node via docker.
 
 - Then register as a BP via [`updatebp`](https://github.com/eosforce/contracts/tree/master/System#updatebp). Check out if you are on the BP list with `get table eosio eosio bps` when you have succeeded to finish the BP registration .
 
+    ```bash
+    # bpname will be used as producer-name in config.ini.
+    # block_signning_key pair will be used as signature-provider in config.ini.
+    # commission_rate's range is [0, 10000], which means [0%, 100%]. If the commission_rate is 1000, e.g., 10%, then you'll take 10% of your block rewards and give 90% to your voters.
+    $ cleos push action eosio updatebp '{"bpname":"your_bp_name", "block_signing_key":"EOSXXX", "commission_rate":"1000", "url":"http://eosforce.io"}' -p your_bp_name
+    ```
+
 - Lastly, call on your supporters to [`vote`](https://github.com/eosforce/contracts/tree/master/System#vote) for you! With enough votes, you should be able to participate in producing blocks.
+
+    ```bash
+    # stake: quantity, e.g., `100.0000 EOS`
+    $ cleos push action eosio vote '{"voter":"voter", "bpname":"bpname", "stake":"stake"}' -p voter
+    ```
 
 Refer to [command reference](https://github.com/eosforce/contracts/tree/master/System#command-reference) for all the related commands for BP registration.
 
